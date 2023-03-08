@@ -23,13 +23,7 @@
                 <div class="row align-items-center">
                   <div class="col-md-7">
                     <h4 class="mb-1">{{$user->name}}</h4>
-                    <p class="small mb-3"><span class="badge badge-dark">
-                        @if ($user->address === true)
-                            {{$user->address}}
-                        @else
-                            Dhaka, Bangladesh
-                        @endif    
-                    </span></p>
+                    <p class="small mb-3"><span class="badge badge-dark">{{ !empty($user->address) ? $user->address : "Dhaka Bangladesh" }}</span></p>
                   </div>
                 </div>
                 <div class="row mb-4">
@@ -38,25 +32,13 @@
                   </div>
                   <div class="col">
                     <p class="small mb-0 text-muted">
-                        @if ($user->phone === true)
-                            {{$user->phone}}
-                        @else
-                            +88017-0000000
-                        @endif
+                      {{ !empty($user->phone) ? $user->phone : "+8801725-0000000" }}
                     </p>
                     <p class="small mb-0 text-muted">
-                        @if ($user->state === true)
-                        {{$user->state}}
-                        @else
-                            Mymensingh Sadar
-                        @endif
+                      {{ !empty($user->state->name) ? $user->state->name : "No State Availabe" }}
                     </p>
                     <p class="small mb-0 text-muted">
-                        @if ($user->zip === true)
-                        {{$user->zip}}
-                        @else
-                            2204
-                        @endif
+                      {{ !empty($user->zip) ? $user->zip : "2200" }}
                     </p>
                   </div>
                 </div>

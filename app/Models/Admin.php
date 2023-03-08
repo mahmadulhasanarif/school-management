@@ -27,7 +27,7 @@ class Admin extends Authenticatable
         'status',
         'address',
         'zip',
-        'company',
+        'phone',
         'state_id',
         'image'
     ];

@@ -2,10 +2,15 @@
 
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\Student\ExamTypeController;
+use App\Http\Controllers\Backend\Student\FeeCategoryAmountController;
+use App\Http\Controllers\Backend\Student\FeeCategoryController;
+use App\Http\Controllers\Backend\Student\StudentClassController;
+use App\Http\Controllers\Backend\Student\StudentGroupController;
+use App\Http\Controllers\Backend\Student\StudentShiftController;
+use App\Http\Controllers\Backend\Student\StudentYearController;
 use App\Http\Controllers\User\ProfileController as UserProfileController;
-use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,7 +75,67 @@ Route::group(['prefix' => 'admin','middleware' => ['auth:admin'], 'as'=>'admin.'
     Route::get('role/edit/{id}', [RoleController::class, 'edit'])->name('role.edit');
     Route::post('role/update/{id}', [RoleController::class, 'update'])->name('role.update');
     Route::get('role/delete/{id}', [RoleController::class, 'delete'])->name('role.delete');
+
 });
 
 require __DIR__.'/adminAuth.php';
 
+
+
+Route::group(['prefix' => 'student/','middleware' => ['auth:admin'], 'as'=>'student.'], function(){
+    // Student Class Setup
+    Route::get('class/index', [StudentClassController::class, 'index'])->name('class.index');
+    Route::get('class/create', [StudentClassController::class, 'create'])->name('class.create');
+    Route::post('class/store', [StudentClassController::class, 'store'])->name('class.store');
+    Route::get('class/edit/{id}', [StudentClassController::class, 'edit'])->name('class.edit');
+    Route::post('class/update/{id}', [StudentClassController::class, 'update'])->name('class.update');
+    Route::get('class/delete/{id}', [StudentClassController::class, 'delete'])->name('class.delete');
+
+    // Student Year Setup
+    Route::get('year/index', [StudentYearController::class, 'index'])->name('year.index');
+    Route::get('year/create', [StudentYearController::class, 'create'])->name('year.create');
+    Route::post('year/store', [StudentYearController::class, 'store'])->name('year.store');
+    Route::get('year/edit/{id}', [StudentYearController::class, 'edit'])->name('year.edit');
+    Route::post('year/update/{id}', [StudentYearController::class, 'update'])->name('year.update');
+    Route::get('year/delete/{id}', [StudentYearController::class, 'delete'])->name('year.delete');
+
+    // Student Group Setup
+    Route::get('group/index', [StudentGroupController::class, 'index'])->name('group.index');
+    Route::get('group/create', [StudentGroupController::class, 'create'])->name('group.create');
+    Route::post('group/store', [StudentGroupController::class, 'store'])->name('group.store');
+    Route::get('group/edit/{id}', [StudentGroupController::class, 'edit'])->name('group.edit');
+    Route::post('group/update/{id}', [StudentGroupController::class, 'update'])->name('group.update');
+    Route::get('group/delete/{id}', [StudentGroupController::class, 'delete'])->name('group.delete');
+    
+    // Student Shift Setup
+    Route::get('shift/index', [StudentShiftController::class, 'index'])->name('shift.index');
+    Route::get('shift/create', [StudentShiftController::class, 'create'])->name('shift.create');
+    Route::post('shift/store', [StudentShiftController::class, 'store'])->name('shift.store');
+    Route::get('shift/edit/{id}', [StudentShiftController::class, 'edit'])->name('shift.edit');
+    Route::post('shift/update/{id}', [StudentShiftController::class, 'update'])->name('shift.update');
+    Route::get('shift/delete/{id}', [StudentShiftController::class, 'delete'])->name('shift.delete');
+    
+    // Student Fee category Setup
+    Route::get('fee_category/index', [FeeCategoryController::class, 'index'])->name('fee_category.index');
+    Route::get('fee_category/create', [FeeCategoryController::class, 'create'])->name('fee_category.create');
+    Route::post('fee_category/store', [FeeCategoryController::class, 'store'])->name('fee_category.store');
+    Route::get('fee_category/edit/{id}', [FeeCategoryController::class, 'edit'])->name('fee_category.edit');
+    Route::post('fee_category/update/{id}', [FeeCategoryController::class, 'update'])->name('fee_category.update');
+    Route::get('fee_category/delete/{id}', [FeeCategoryController::class, 'delete'])->name('fee_category.delete');
+
+    // Student Fee Category Amount Setup
+    Route::get('fee_category_amount/index', [FeeCategoryAmountController::class, 'index'])->name('fee_category_amount.index');
+    Route::get('fee_category_amount/create', [FeeCategoryAmountController::class, 'create'])->name('fee_category_amount.create');
+    Route::post('fee_category_amount/store', [FeeCategoryAmountController::class, 'store'])->name('fee_category_amount.store');
+    Route::get('fee_category_amount/edit/{fee_category_id}', [FeeCategoryAmountController::class, 'edit'])->name('fee_category_amount.edit');
+    Route::post('fee_category_amount/update/{fee_category_id}', [FeeCategoryAmountController::class, 'update'])->name('fee_category_amount.update');
+    Route::get('fee_category_amount/details/{fee_category_id}', [FeeCategoryAmountController::class, 'details'])->name('fee_category_amount.details');
+
+    // Student Exam Type Setup
+    Route::get('exam_type/index', [ExamTypeController::class, 'index'])->name('exam_type.index');
+    Route::get('exam_type/create', [ExamTypeController::class, 'create'])->name('exam_type.create');
+    Route::post('exam_type/store', [ExamTypeController::class, 'store'])->name('exam_type.store');
+    Route::get('exam_type/edit/{id}', [ExamTypeController::class, 'edit'])->name('exam_type.edit');
+    Route::post('exam_type/update/{id}', [ExamTypeController::class, 'update'])->name('exam_type.update');
+    Route::get('exam_type/delete/{id}', [ExamTypeController::class, 'delete'])->name('exam_type.delete');
+});

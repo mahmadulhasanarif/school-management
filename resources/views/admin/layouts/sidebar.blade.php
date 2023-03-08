@@ -42,17 +42,17 @@
           </a>
           <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./ui-color.html"><span class="ml-1 item-text">Student Class</span>
+              <a class="nav-link pl-3" href="{{route('student.class.index')}}"><span class="ml-1 item-text">Student Class</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Student Year</span></a>
+              <a class="nav-link pl-3" href="{{route('student.year.index')}}"><span class="ml-1 item-text">Student Year</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Student Group</span></a>
+              <a class="nav-link pl-3" href="{{route('student.group.index')}}"><span class="ml-1 item-text">Student Group</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./ui-typograpy.html"><span class="ml-1 item-text">Student Shift</span></a>
+              <a class="nav-link pl-3" href="{{route('student.shift.index')}}"><span class="ml-1 item-text">Student Shift</span></a>
             </li>
           </ul>
         </li>
@@ -64,13 +64,13 @@
           </a>
           <ul class="collapse list-unstyled pl-4 w-100" id="tables">
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">Fee Category</span></a>
+              <a class="nav-link pl-3" href="{{route('student.fee_category.index')}}"><span class="ml-1 item-text">Fee Category</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Cat Fee Amount</span></a>
+              <a class="nav-link pl-3" href="{{route('student.fee_category_amount.index')}}"><span class="ml-1 item-text">Cat Fee Amount</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Exam Type</span></a>
+              <a class="nav-link pl-3" href="{{route('student.exam_type.index')}}"><span class="ml-1 item-text">Exam Type</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Subject</span></a>
