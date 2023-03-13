@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Student;
+namespace App\Http\Controllers\Backend\Setup;
 
 use App\Http\Controllers\Controller;
 use App\Models\StudentYear;
@@ -33,7 +33,7 @@ class StudentYearController extends Controller
         ]);
 
         Alert::success('Student year Inserted!', 'Successfully inserted student year');
-        return redirect()->route('student.year.index');
+        return redirect()->route('setup.year.index');
     }
 
     public function create()
@@ -64,7 +64,7 @@ class StudentYearController extends Controller
         ]);
 
         Alert::success('Student year Updated!', 'Successfully Updaed student year');
-        return redirect()->route('student.year.index');
+        return redirect()->route('setup.year.index');
     }
 
 

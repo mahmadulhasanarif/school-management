@@ -9,7 +9,7 @@
           </div>
 
           <div class="col-md-3">
-            <a style="float: right" class="btn mb-2 btn-success" href="{{route('student.fee_category_amount.create')}}">Fee Category Amount Create</a>
+            <a style="float: right" class="btn mb-2 btn-success" href="{{route('setup.fee_category_amount.create')}}">Fee Category Amount Create</a>
           </div>
         </div>
         <p class="card-text">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, built upon the foundations of progressive enhancement, that adds all of these advanced.</p>
@@ -41,8 +41,8 @@
                           <span class="text-muted sr-only">Action</span>
                         </button>
                           <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="{{route('student.fee_category_amount.edit', $item->fee_category_id)}}">Edit</a>
-                            <a class="dropdown-item" href="{{route('student.fee_category_amount.details', $item->fee_category_id)}}">Details</a>
+                            <a class="dropdown-item" href="{{route('setup.fee_category_amount.edit', $item->fee_category_id)}}">Edit</a>
+                            <a class="dropdown-item" href="{{route('setup.fee_category_amount.details', $item->fee_category_id)}}">Details</a>
                           </div>
                       </td>
                           

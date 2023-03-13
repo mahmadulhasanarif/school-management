@@ -68,6 +68,117 @@ class RolePermissionSedder extends Seeder
                 'admin.role.delete',
             ]
         ],
+        [
+            'group_name' => 'student_class',
+            'permissions' => [
+                // role Permissions
+                'setup.class.index',
+                'setup.class.create',
+                'setup.class.edit',
+                'setup.class.delete',
+            ]
+        ],
+        [
+            'group_name' => 'year',
+            'permissions' => [
+                // role Permissions
+                'setup.year.index',
+                'setup.year.create',
+                'setup.year.edit',
+                'setup.year.delete',
+            ]
+        ],
+        [
+            'group_name' => 'group',
+            'permissions' => [
+                // role Permissions
+                'setup.group.index',
+                'setup.group.create',
+                'setup.group.edit',
+                'setup.group.delete',
+            ]
+        ],
+        [
+            'group_name' => 'shift',
+            'permissions' => [
+                // role Permissions
+                'setup.shift.index',
+                'setup.shift.create',
+                'setup.shift.edit',
+                'setup.shift.delete',
+            ]
+        ],
+        [
+            'group_name' => 'fee_category',
+            'permissions' => [
+                // role Permissions
+                'setup.fee_category.index',
+                'setup.fee_category.create',
+                'setup.fee_category.edit',
+                'setup.fee_category.delete',
+            ]
+        ],
+        [
+            'group_name' => 'fee_category_amount',
+            'permissions' => [
+                // role Permissions
+                'setup.fee_category_amount.index',
+                'setup.fee_category_amount.create',
+                'setup.fee_category_amount.edit',
+                'setup.fee_category_amount.delete',
+            ]
+        ],
+        [
+            'group_name' => 'exam_type',
+            'permissions' => [
+                // role Permissions
+                'setup.exam_type.index',
+                'setup.exam_type.create',
+                'setup.exam_type.edit',
+                'setup.exam_type.delete',
+            ]
+        ],
+        [
+            'group_name' => 'school_subject',
+            'permissions' => [
+                // role Permissions
+                'setup.school_subject.index',
+                'setup.school_subject.create',
+                'setup.school_subject.edit',
+                'setup.school_subject.delete',
+            ]
+        ],
+        [
+            'group_name' => 'assign_subject',
+            'permissions' => [
+                // role Permissions
+                'setup.assign_subject.index',
+                'setup.assign_subject.create',
+                'setup.assign_subject.edit',
+                'setup.assign_subject.delete',
+            ]
+        ],
+        [
+            'group_name' => 'designation',
+            'permissions' => [
+                // role Permissions
+                'setup.designation.index',
+                'setup.designation.create',
+                'setup.designation.edit',
+                'setup.designation.delete',
+            ]
+        ],
+        [
+            'group_name' => 'student_registration',
+            'permissions' => [
+                // role Permissions
+                'student.registration.index',
+                'student.registration.create',
+                'student.registration.edit',
+                'student.registration.promotion',
+                'student.search.class.year',
+            ]
+        ],
 
         
     ];

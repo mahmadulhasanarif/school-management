@@ -6,7 +6,7 @@
       <div class="col-12 col-lg-10 col-xl-8">
         <h2 class="h3 mb-4 page-title">Student Shift Create</h2>
         <div class="my-4">
-          <form method="POST" action="{{route('student.shift.store')}}">
+          <form method="POST" action="{{route('setup.shift.store')}}">
             @csrf
             <hr class="my-4">
               <div class="form-group ">

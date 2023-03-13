@@ -5,7 +5,7 @@
       <div class="col-12 col-lg-10 col-xl-8">
         <h2 class="h3 mb-4 page-title">Student Fee Category Amount Edit</h2>
         <div class="my-4">
-          <form method="POST" action="{{route('student.fee_category_amount.update', $data[0]->fee_category_id)}}">
+          <form method="POST" action="{{route('setup.fee_category_amount.update', $data[0]->fee_category_id)}}">
             @csrf
             <hr class="my-4">
             <div class="add_item">

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Student;
+namespace App\Http\Controllers\Backend\Setup;
 
 use App\Http\Controllers\Controller;
 use App\Models\StudentGroup;
@@ -32,7 +32,7 @@ class StudentGroupController extends Controller
         ]);
 
         Alert::success('Student Group Inserted!', 'Successfully inserted student Group');
-        return redirect()->route('student.group.index');
+        return redirect()->route('setup.group.index');
     }
 
     public function create()
@@ -62,7 +62,7 @@ class StudentGroupController extends Controller
         ]);
 
         Alert::success('Student Group Updated!', 'Successfully Updaed student group');
-        return redirect()->route('student.group.index');
+        return redirect()->route('setup.group.index');
     }
 
 

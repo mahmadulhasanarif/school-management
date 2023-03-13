@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Student;
+namespace App\Http\Controllers\Backend\Setup;
 
 use App\Http\Controllers\Controller;
 use App\Models\ExamType;
@@ -32,7 +32,7 @@ class ExamTypeController extends Controller
         ]);
 
         Alert::success('Student exam_type Inserted!', 'Successfully inserted student exam_type');
-        return redirect()->route('student.exam_type.index');
+        return redirect()->route('setup.exam_type.index');
     }
 
     public function create()
@@ -62,7 +62,7 @@ class ExamTypeController extends Controller
         ]);
 
         Alert::success('Student exam_type Updated!', 'Successfully Updaed student exam_type');
-        return redirect()->route('student.exam_type.index');
+        return redirect()->route('setup.exam_type.index');
     }
 
 

@@ -9,7 +9,7 @@
           </div>
 
           <div class="col-md-3">
-            <a style="float: right" class="btn mb-2 btn-success" href="{{route('student.fee_category_amount.index')}}">Back To Index</a>
+            <a style="float: right" class="btn mb-2 btn-success" href="{{route('setup.fee_category_amount.index')}}">Back To Index</a>
           </div>
           <p class="col-lg-4"><strong class="text-danger">Fee Category Type</strong> : {{ $fee_category_amount[0]->fee_category->name }}</p>
           <p class="card-text col-md-8">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, built upon the foundations of progressive.</p>

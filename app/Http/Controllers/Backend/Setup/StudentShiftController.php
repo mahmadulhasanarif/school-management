@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Student;
+namespace App\Http\Controllers\Backend\Setup;
 
 use App\Http\Controllers\Controller;
 use App\Models\StudentShift;
@@ -32,7 +32,7 @@ class StudentShiftController extends Controller
         ]);
 
         Alert::success('Student shift Inserted!', 'Successfully inserted student shift');
-        return redirect()->route('student.shift.index');
+        return redirect()->route('setup.shift.index');
     }
 
     public function create()
@@ -62,7 +62,7 @@ class StudentShiftController extends Controller
         ]);
 
         Alert::success('Student shift Updated!', 'Successfully Updaed student shift');
-        return redirect()->route('student.shift.index');
+        return redirect()->route('setup.shift.index');
     }
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Student;
+namespace App\Http\Controllers\Backend\Setup;
 
 use App\Http\Controllers\Controller;
 use App\Models\StudentClass;
@@ -32,7 +32,7 @@ class StudentClassController extends Controller
         ]);
 
         Alert::success('Student Class Inserted!', 'Successfully inserted student class');
-        return redirect()->route('student.class.index');
+        return redirect()->route('setup.class.index');
     }
 
     public function create()
@@ -62,7 +62,7 @@ class StudentClassController extends Controller
         ]);
 
         Alert::success('Student Class Updated!', 'Successfully Updaed student class');
-        return redirect()->route('student.class.index');
+        return redirect()->route('setup.class.index');
     }
 
 

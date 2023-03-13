@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Student;
+namespace App\Http\Controllers\Backend\Setup;
 
 use App\Http\Controllers\Controller;
 use App\Models\FeeCategory;
@@ -32,7 +32,7 @@ class FeeCategoryController extends Controller
         ]);
 
         Alert::success('Student fee_category Inserted!', 'Successfully inserted student fee_category');
-        return redirect()->route('student.fee_category.index');
+        return redirect()->route('setup.fee_category.index');
     }
 
     public function create()
@@ -62,7 +62,7 @@ class FeeCategoryController extends Controller
         ]);
 
         Alert::success('Student fee_category Updated!', 'Successfully Updaed student fee_category');
-        return redirect()->route('student.fee_category.index');
+        return redirect()->route('setup.fee_category.index');
     }
 
 

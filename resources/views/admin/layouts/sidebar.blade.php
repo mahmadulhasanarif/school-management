@@ -42,17 +42,17 @@
           </a>
           <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
             <li class="nav-item">
-              <a class="nav-link pl-3" href="{{route('student.class.index')}}"><span class="ml-1 item-text">Student Class</span>
+              <a class="nav-link pl-3" href="{{route('setup.class.index')}}"><span class="ml-1 item-text">Student Class</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="{{route('student.year.index')}}"><span class="ml-1 item-text">Student Year</span></a>
+              <a class="nav-link pl-3" href="{{route('setup.year.index')}}"><span class="ml-1 item-text">Student Year</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="{{route('student.group.index')}}"><span class="ml-1 item-text">Student Group</span></a>
+              <a class="nav-link pl-3" href="{{route('setup.group.index')}}"><span class="ml-1 item-text">Student Group</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="{{route('student.shift.index')}}"><span class="ml-1 item-text">Student Shift</span></a>
+              <a class="nav-link pl-3" href="{{route('setup.shift.index')}}"><span class="ml-1 item-text">Student Shift</span></a>
             </li>
           </ul>
         </li>
@@ -64,22 +64,22 @@
           </a>
           <ul class="collapse list-unstyled pl-4 w-100" id="tables">
             <li class="nav-item">
-              <a class="nav-link pl-3" href="{{route('student.fee_category.index')}}"><span class="ml-1 item-text">Fee Category</span></a>
+              <a class="nav-link pl-3" href="{{route('setup.fee_category.index')}}"><span class="ml-1 item-text">Fee Category</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="{{route('student.fee_category_amount.index')}}"><span class="ml-1 item-text">Cat Fee Amount</span></a>
+              <a class="nav-link pl-3" href="{{route('setup.fee_category_amount.index')}}"><span class="ml-1 item-text">Fee Category Amount</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="{{route('student.exam_type.index')}}"><span class="ml-1 item-text">Exam Type</span></a>
+              <a class="nav-link pl-3" href="{{route('setup.exam_type.index')}}"><span class="ml-1 item-text">Exam Type</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Subject</span></a>
+              <a class="nav-link pl-3" href="{{route('setup.school_subject.index')}}"><span class="ml-1 item-text">Subject</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Assign Subject</span></a>
+              <a class="nav-link pl-3" href="{{route('setup.assign_subject.index')}}"><span class="ml-1 item-text">Assign Subject</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Designation</span></a>
+              <a class="nav-link pl-3" href="{{route('setup.designation.index')}}"><span class="ml-1 item-text">Designation</span></a>
             </li>
            
           </ul>
@@ -100,25 +100,24 @@
       <ul class="navbar-nav flex-fill w-100 mb-2">
 
         <li class="nav-item dropdown">
-          <a href="#contact" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+          <a href="#student" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
             <i class="fe fe-calendar fe-16"></i>
             <span class="ml-3 item-text">Student Management</span>
           </a>
-          <ul class="collapse list-unstyled pl-4 w-100" id="contact">
-            <a class="nav-link pl-3" href="./contacts-list.html"><span class="ml-1">Student Registration</span></a>
-            <a class="nav-link pl-3" href="./contacts-grid.html"><span class="ml-1">Student Promotion</span></a>
-            <a class="nav-link pl-3" href="./contacts-new.html"><span class="ml-1">Roll Generate</span></a>
-            <a class="nav-link pl-3" href="./contacts-new.html"><span class="ml-1">Registration Fee</span></a>
+          <ul class="collapse list-unstyled pl-4 w-100" id="student">
+            <a class="nav-link pl-3" href="{{route('student.registration.index')}}"><span class="ml-1">Student Registration</span></a>
+            <a class="nav-link pl-3" href="{{route('student.roll.generate.index')}}"><span class="ml-1">Roll Generate</span></a>
+            <a class="nav-link pl-3" href="{{route('student.registration.fee')}}"><span class="ml-1">Registration Fee</span></a>
             <a class="nav-link pl-3" href="./contacts-new.html"><span class="ml-1">Student Monthly Fee</span></a>
             <a class="nav-link pl-3" href="./contacts-new.html"><span class="ml-1">Student Exam Fee</span></a>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a href="#contact" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+          <a href="#employee" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
             <i class="fe fe-book fe-16"></i>
             <span class="ml-3 item-text">Employee management</span>
           </a>
-          <ul class="collapse list-unstyled pl-4 w-100" id="contact">
+          <ul class="collapse list-unstyled pl-4 w-100" id="employee">
             <a class="nav-link pl-3" href="./contacts-list.html"><span class="ml-1">Employee Registration</span></a>
             <a class="nav-link pl-3" href="./contacts-grid.html"><span class="ml-1">Employee Sallary</span></a>
             <a class="nav-link pl-3" href="./contacts-new.html"><span class="ml-1">Employee Leave</span></a>

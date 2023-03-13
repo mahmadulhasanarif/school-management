@@ -3,13 +3,19 @@
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Backend\Student\ExamTypeController;
-use App\Http\Controllers\Backend\Student\FeeCategoryAmountController;
-use App\Http\Controllers\Backend\Student\FeeCategoryController;
-use App\Http\Controllers\Backend\Student\StudentClassController;
-use App\Http\Controllers\Backend\Student\StudentGroupController;
-use App\Http\Controllers\Backend\Student\StudentShiftController;
-use App\Http\Controllers\Backend\Student\StudentYearController;
+use App\Http\Controllers\Backend\Setup\AssignSubjectController;
+use App\Http\Controllers\Backend\Setup\DesignationController;
+use App\Http\Controllers\Backend\Setup\ExamTypeController;
+use App\Http\Controllers\Backend\Setup\FeeCategoryAmountController;
+use App\Http\Controllers\Backend\Setup\FeeCategoryController;
+use App\Http\Controllers\Backend\Setup\SchoolSubjectController;
+use App\Http\Controllers\Backend\Setup\StudentClassController;
+use App\Http\Controllers\Backend\Setup\StudentGroupController;
+use App\Http\Controllers\Backend\Setup\StudentShiftController;
+use App\Http\Controllers\Backend\Setup\StudentYearController;
+use App\Http\Controllers\Backend\Student\RegistrationFeeController;
+use App\Http\Controllers\Backend\Student\StudentRegisterController;
+use App\Http\Controllers\Backend\Student\StudentRollGenerateController;
 use App\Http\Controllers\User\ProfileController as UserProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -82,7 +88,7 @@ require __DIR__.'/adminAuth.php';
 
 
 
-Route::group(['prefix' => 'student/','middleware' => ['auth:admin'], 'as'=>'student.'], function(){
+Route::group(['prefix' => 'setup/','middleware' => ['auth:admin'], 'as'=>'setup.'], function(){
     // Student Class Setup
     Route::get('class/index', [StudentClassController::class, 'index'])->name('class.index');
     Route::get('class/create', [StudentClassController::class, 'create'])->name('class.create');
@@ -138,4 +144,55 @@ Route::group(['prefix' => 'student/','middleware' => ['auth:admin'], 'as'=>'stud
     Route::get('exam_type/edit/{id}', [ExamTypeController::class, 'edit'])->name('exam_type.edit');
     Route::post('exam_type/update/{id}', [ExamTypeController::class, 'update'])->name('exam_type.update');
     Route::get('exam_type/delete/{id}', [ExamTypeController::class, 'delete'])->name('exam_type.delete');
+
+    // School Subject Type Setup
+    Route::get('school_subject/index', [SchoolSubjectController::class, 'index'])->name('school_subject.index');
+    Route::get('school_subject/create', [SchoolSubjectController::class, 'create'])->name('school_subject.create');
+    Route::post('school_subject/store', [SchoolSubjectController::class, 'store'])->name('school_subject.store');
+    Route::get('school_subject/edit/{id}', [SchoolSubjectController::class, 'edit'])->name('school_subject.edit');
+    Route::post('school_subject/update/{id}', [SchoolSubjectController::class, 'update'])->name('school_subject.update');
+    Route::get('school_subject/delete/{id}', [SchoolSubjectController::class, 'delete'])->name('school_subject.delete');
+
+    // Assign Subject Type Setup
+    Route::get('assign_subject/index', [AssignSubjectController::class, 'index'])->name('assign_subject.index');
+    Route::get('assign_subject/create', [AssignSubjectController::class, 'create'])->name('assign_subject.create');
+    Route::post('assign_subject/store', [AssignSubjectController::class, 'store'])->name('assign_subject.store');
+    Route::get('assign_subject/edit/{class_id}', [AssignSubjectController::class, 'edit'])->name('assign_subject.edit');
+    Route::post('assign_subject/update/{class_id}', [AssignSubjectController::class, 'update'])->name('assign_subject.update');
+    Route::get('assign_subject/delete/{class_id}', [AssignSubjectController::class, 'details'])->name('assign_subject.details');
+
+    // Designation Setup
+    Route::get('designation/index', [DesignationController::class, 'index'])->name('designation.index');
+    Route::get('designation/create', [DesignationController::class, 'create'])->name('designation.create');
+    Route::post('designation/store', [DesignationController::class, 'store'])->name('designation.store');
+    Route::get('designation/edit/{id}', [DesignationController::class, 'edit'])->name('designation.edit');
+    Route::post('designation/update/{id}', [DesignationController::class, 'update'])->name('designation.update');
+    Route::get('designation/delete/{id}', [DesignationController::class, 'delete'])->name('designation.delete');
+});
+
+
+// Student Route
+Route::group(['prefix' => 'student/','middleware' => ['auth:admin'], 'as'=>'student.'], function(){
+    // Student Registration route
+    Route::get('registration/index', [StudentRegisterController::class, 'index'])->name('registration.index');
+    Route::get('registration/create', [StudentRegisterController::class, 'create'])->name('registration.create');
+    Route::post('registration/store', [StudentRegisterController::class, 'store'])->name('registration.store');
+    Route::get('registration/edit/{student_id}', [StudentRegisterController::class, 'edit'])->name('registration.edit');
+    Route::post('registration/update/{student_id}', [StudentRegisterController::class, 'update'])->name('registration.update');
+    Route::get('registration/promotion/{student_id}', [StudentRegisterController::class, 'studentPromotion'])->name('registration.promotion');
+    Route::post('registration/promotion/{student_id}', [StudentRegisterController::class, 'studentRegistrationPromotion'])->name('registration.promote');
+    
+    // Student Search Class and Year wise Data Get
+    Route::get('search/class/year/wise', [StudentRegisterController::class, 'searchClassYear'])->name('search.class.year');
+    Route::get('registration/details/{student_id}', [StudentRegisterController::class, 'DetailsPDF'])->name('registration.details');
+
+    // Student Roll Generate Route
+    Route::get('/roll/generate/index', [StudentRollGenerateController::class, 'StudentRollView'])->name('roll.generate.index');
+    Route::get('/registration/getstudents', [StudentRollGenerateController::class, 'GetStudents'])->name('registration.getstudents');
+    Route::post('/roll/generate/store', [StudentRollGenerateController::class, 'StudentRollStore'])->name('roll.generate.store');
+
+    // Student Registration Fee Route
+    Route::get('registration/fee', [RegistrationFeeController::class, 'index'])->name('registration.fee');
+    Route::get('registration/fee/classWise', [RegistrationFeeController::class, 'RegFeeClassData'])->name('registration.fee.classwise');
+    Route::post('registration/fee/store', [RegistrationFeeController::class, 'store'])->name('registration.fee.store');
 });

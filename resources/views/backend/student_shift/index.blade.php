@@ -9,7 +9,7 @@
           </div>
 
           <div class="col-md-2">
-            <a style="float: right" class="btn mb-2 btn-success" href="{{route('student.shift.create')}}">Student Shift Create</a>
+            <a style="float: right" class="btn mb-2 btn-success" href="{{route('setup.shift.create')}}">Student Shift Create</a>
           </div>
         </div>
         <p class="card-text">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, built upon the foundations of progressive enhancement, that adds all of these advanced.</p>
@@ -44,8 +44,8 @@
                           <span class="text-muted sr-only">Action</span>
                         </button>
                           <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="{{route('student.shift.edit', $item->id)}}">Edit</a>
-                            <a class="dropdown-item" href="{{route('student.shift.delete', $item->id)}}">Remove</a>
+                            <a class="dropdown-item" href="{{route('setup.shift.edit', $item->id)}}">Edit</a>
+                            <a class="dropdown-item" href="{{route('setup.shift.delete', $item->id)}}">Remove</a>
                           </div>
                       </td>
                           

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Student;
+namespace App\Http\Controllers\Backend\Setup;
 
 use App\Http\Controllers\Controller;
 use App\Models\FeeCategory;
@@ -43,7 +43,7 @@ class FeeCategoryAmountController extends Controller
                 $feeCategoryAmount->save();
             }
             Alert::success('Student fee_category_amount Inserted!', 'Successfully inserted student fee_category_amount');
-            return redirect()->route('student.fee_category_amount.index');
+            return redirect()->route('setup.fee_category_amount.index');
         }else{
             return redirect()->back();
         }
@@ -70,18 +70,13 @@ class FeeCategoryAmountController extends Controller
     {
         $request->validate(
             [
-                'amount'=> 'required',
-                'fee_category_id'=>'required',
-                'class_id'=>'required'
-            ],
-            [
-                'amount.required'=>'Student amount field is required',
+                'fee_category_id'=>'required'
             ]
         );
 
         if($request->class_id == null){
-            Alert::error('Student fee_category_amount error!', 'Error Updaed student fee_category_amount');
-            return redirect()->route('student.fee_category_amount.edit', $fee_category_id);
+            Alert::error('fee_category_amount error!', 'Error Updaed student fee_category_amount');
+            return redirect()->back();
         }else{
                 $count = count($request->class_id);
                 FeeCategoryAmount::where('fee_category_id', $fee_category_id)->delete();
@@ -94,7 +89,7 @@ class FeeCategoryAmountController extends Controller
                     $feeCategoryAmount->save();
                 }
                 Alert::success('Student fee_category_amount Updated!', 'Updaed student fee_category_amount');
-                return redirect()->route('student.fee_category_amount.index');
+                return redirect()->route('setup.fee_category_amount.index');
             }
     }
 
